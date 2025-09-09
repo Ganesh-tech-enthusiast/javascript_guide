@@ -1,0 +1,15 @@
+git init
+git add .
+git commit -m "your message here"
+git remote add origin your_git_repo_url
+git push origin main
+
+creating branches
+git branch name
+
+renaming branch
+git branch -m newname
+
+changing branch
+git checkout branchname
+

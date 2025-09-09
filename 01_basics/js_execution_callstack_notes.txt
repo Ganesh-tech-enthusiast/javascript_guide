@@ -1,0 +1,106 @@
+
+📘 JavaScript Execution & Call Stack (Interview Notes)
+
+-----------------------------------------------------
+ ✅ 1. How JavaScript Runs
+-----------------------------------------------------
+- JS is a **single-threaded, synchronous language** (executes one thing at a time).
+- It uses the **JavaScript Engine** (like V8 in Chrome, Node.js).
+- Code runs inside **Execution Contexts**:
+   1. Global Execution Context (GEC)
+   2. Function Execution Context (FEC)
+
+- The engine uses:
+   📍 Call Stack → keeps track of what function is running
+   📍 Memory (Heap) → stores variables & objects
+
+-----------------------------------------------------
+ ✅ 2. Execution Context
+-----------------------------------------------------
+Whenever code runs:
+1. Creation Phase:
+   - Memory allocated for variables & functions
+   - Variables: set to `undefined`
+   - Functions: full definition stored
+
+2. Execution Phase:
+   - Code runs line by line
+   - Variables assigned actual values
+
+-----------------------------------------------------
+ ✅ 3. Call Stack
+-----------------------------------------------------
+- A stack (LIFO: last in, first out).
+- Whenever a function is called → new Execution Context pushed.
+- When function ends → popped from stack.
+- Always starts with Global Execution Context (GEC).
+
+-----------------------------------------------------
+ ✅ 4. Example: Call Stack in Action
+-----------------------------------------------------
+function first() {
+  console.log("Inside First");
+  second();
+}
+
+function second() {
+  console.log("Inside Second");
+  third();
+}
+
+function third() {
+  console.log("Inside Third");
+}
+
+first();
+
+Call Stack Flow:
+1. GEC created → pushed
+2. first() called → FEC(first) pushed
+3. console.log → executed
+4. second() called → FEC(second) pushed
+5. console.log → executed
+6. third() called → FEC(third) pushed
+7. console.log → executed
+8. FEC(third) popped
+9. FEC(second) popped
+10. FEC(first) popped
+11. GEC removed after program ends
+
+-----------------------------------------------------
+ ✅ 5. Visualization of Call Stack
+-----------------------------------------------------
+Initially:
+   [ GEC ]
+
+After first():
+   [ GEC, first() ]
+
+After second():
+   [ GEC, first(), second() ]
+
+After third():
+   [ GEC, first(), second(), third() ]
+
+After finishing third():
+   [ GEC, first(), second() ]
+
+Finally:
+   [ GEC ] → removed → stack empty
+
+-----------------------------------------------------
+ ✅ 6. Interview Quick Notes
+-----------------------------------------------------
+👉 JS runs in **Execution Contexts**
+   - Global Context (created once)
+   - Function Context (created every time function is called)
+
+👉 Call Stack:
+   - Keeps track of function calls (LIFO)
+   - New function → pushed
+   - Function finished → popped
+
+👉 Important:
+   - JS is **single-threaded**
+   - Long tasks block the call stack (solution: async, event loop)
+   - `this` and scope are bound within execution context

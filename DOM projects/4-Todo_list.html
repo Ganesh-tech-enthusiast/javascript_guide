@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            /* border-bottom: 1px solid #ddd; */
+            cursor: pointer;
+        }
+
+        /* .done {
+        text-decoration: line-through;
+        color: gray;
+      } */
+    </style>
+</head>
+
+<body>
+
+    <h1>Simple To-Do List</h1>
+
+    <input type="text" id="todoInput" placeholder="Enter a new task" />
+    <button onclick="addTodo()">Add</button>
+
+    <ul id="todoList">
+        <!-- To-do items will appear here -->
+    </ul>
+
+    <script>
+        // 👉 Your JavaScript code will go here
+        //step1: select the ul where task will go 
+        const list = document.getElementById("todoList")
+        const inputfield = document.getElementById("todoInput")
+        function addTodo() {
+            const input = document.getElementById("todoInput").value //it is already a string so no need to convert it into string 
+
+            // Do nothing if input is empty
+            if (input.trim() === "") return;
+
+            //now check if the task already exist or not
+            const providedtasks = document.querySelectorAll("#todoList li");
+            for (let tasks of providedtasks) {
+                if (tasks.textContent === input) {
+                    alert("Task already exist, Think for a new task to done!")
+                    return; //stop execution
+                }
+            }
+
+            //create element li and store input into it and then append li to ul
+            const li = document.createElement("li")
+            li.textContent = input //as input is a string store it in li
+
+            //now append li as a child in ul
+            list.appendChild(li)
+
+            // Clear the input field after adding
+            document.getElementById("todoInput").value = "";
+        }
+            //listen for enter key press and append task into list
+            inputfield.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    addTodo();
+                }
+            });
+        
+    </script>
+
+</body>
+
+</html>

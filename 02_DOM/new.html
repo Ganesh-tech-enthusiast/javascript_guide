@@ -1,0 +1,77 @@
+
+<!-- here we will learn how to add,remove and edit elements in dom -->
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="container">
+      <h1 id="myHeading">Original Heading</h1>
+    </div>
+
+    <button onclick="createElementExample()">Create Element</button>
+    <button onclick="editElementExample()">Edit Element</button>
+    <button onclick="removeElementExample()">Remove Element</button>
+
+    <script>
+      // ✅ Create a new element and append it to the container
+      function createElementExample() {
+        // Create a new paragraph element
+        const newParagraph = document.createElement("p");
+        
+        // Set text content for the new element
+        newParagraph.innerHTML = "This is a dynamically created paragraph.";
+        
+        // Set an attribute (optional)
+        newParagraph.setAttribute("class", "dynamic-paragraph");
+
+        // Append the new paragraph to the container div
+        const container = document.getElementById("container");
+        container.appendChild(newParagraph);
+      }
+
+      // ✅ Edit an existing element's content, style, and attributes
+      function editElementExample() {
+        // Access the heading element by its ID
+        const heading = document.getElementById("myHeading");
+
+        // Change the text content
+        heading.textContent = "Updated Heading Text";
+
+        // Change CSS style directly
+        heading.style.color = "red";
+        heading.style.backgroundColor = "yellow"
+
+        // Add a class attribute
+        heading.setAttribute("class", "highlighted");
+      }
+
+      // ✅ Remove an element from the DOM
+      function removeElementExample() {
+        const container = document.getElementById("container");
+
+        // Select the first paragraph (if it exists)
+        const para = container.querySelector("p");
+
+        if (para) {
+          // Method 1: Remove the element directly
+          para.remove();
+
+          // OR Method 2: Remove using parent and child relationship
+          // container.removeChild(para);
+        } else {
+          alert("No paragraph to remove!");
+        }
+      }
+
+      // ✅ Example of querying elements
+      // Select element using querySelector (first matching element)
+      const firstParagraph = document.querySelector("p");
+
+      // Select all paragraphs using querySelectorAll
+      const allParagraphs = document.querySelectorAll("p");
+
+      // Example usage (just logging for demonstration)
+      console.log("First paragraph:", firstParagraph);
+      console.log("All paragraphs:", allParagraphs);
+    </script>
+  </body>
+</html>

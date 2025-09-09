@@ -17,7 +17,7 @@ console.log(sayHi("Ganesh")); // Hi, Ganesh
 
 //now we will discuss function with objects and arrays
 
-//create nbject foirst
+//create object first
 let obj ={
     name:"ganesh",
     surname:"wakchaure"
@@ -67,11 +67,12 @@ function loginUserMessage(username = "sam"){
 // console.log(loginUserMessage("hitesh"))
 
 
-function calculateCartPrice(val1, val2, ...num1){
+function calculateCartPrice(...num1){
     return num1
 }
 
-// console.log(calculateCartPrice(200, 400, 500, 2000))
+console.log(calculateCartPrice(200, 400, 500, 2000)) //will print array of all values
+
 
 const user = {
     username: "hitesh",

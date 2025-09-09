@@ -9,7 +9,8 @@ console.log(balance.toFixed(10)); //prints with 10 decimal zeros
 
 const otherNumber = 123.8966
 
-console.log(otherNumber.toPrecision(40));//prints number with 40 precision digits  it adds required digits randomly
+console.log(otherNumber.toPrecision(40));//prints number with 40 precision digits  it adds required digits randomly like 
+// 123.8966000000000065028871176764369010925
 
 const hundreds = 1000000
 console.log(hundreds.toLocaleString('en-IN'));//it is used to print number as a amount value 
@@ -19,7 +20,7 @@ console.log(hundreds.toLocaleString('en-IN'));//it is used to print number as a 
 console.log(Math);
 console.log(Math.abs(-4));//converts negative numbers to positive only
 console.log(Math.round(4.6)); //rounds the figure
-console.log(Math.ceil(4.2)); //rounds the figure to maximum if precions comes greateer than 0
+console.log(Math.ceil(4.2)); //rounds the figure to maximum if precions comes greateer than 0 :5
 console.log(Math.floor(4.9)); //print  the number before point
 console.log(Math.min(4, 3, 6, 8)); //prints minimum number
 console.log(Math.max(4, 3, 6, 8)); //prints maximum number

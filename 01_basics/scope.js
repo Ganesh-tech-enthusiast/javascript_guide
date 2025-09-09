@@ -70,7 +70,7 @@ function outerFunc() {
   innerFunc();
 }
 outerFunc();
-//+_+_+_+_+_+_+_+_+_+_++_+++_+_+_+_+_+_+_+_+_+_+_+_+_+_
+//+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
 //nested scope
 function addition(){
    let  n1 = 10
@@ -78,7 +78,7 @@ function addition(){
    function subtraction(){
     let n3 = 30
     let n4 = 40
-    console.log(n1-n2); //child scope can acces variables of parent scope
+    console.log(n1-n2); //child scope can access variables of parent scope
     
    }
    console.log(`addition is ${n4 - n3}`); //error , parent scope cannot accees variables of child scope

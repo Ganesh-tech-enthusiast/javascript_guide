@@ -1,0 +1,89 @@
+<!-- here we well design a color changer boxes -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color scheme changer</title>
+</head>
+<style>
+    html {
+        margin: 0;
+    }
+
+    
+    .canvas {
+        margin: 100px auto 100px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .button {
+        width: 100px;
+        height: 100px;
+        border: solid black 2px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #red {
+        background: red;
+    }
+
+    #white {
+        background: white;
+    }
+
+    #blue {
+        background: blue;
+    }
+
+    #yellow {
+        background: yellow;
+    }
+</style>
+
+<body>
+    <!--we have to make four buttons which onclick changes the bg color as saame as button color -->
+    <h1>Color scheme changer</h1>
+    <span class="button" id="red">red</span>
+    <span class="button" id="yellow">yellow</span>
+    <span class="button" id="white">white</span>
+    <span class="button" id="blue">blue</span>
+    <h2>click on color you want make background of
+    </h2>
+</body>
+<script>
+    //select button which will be pressed 
+    const buttons = document.querySelectorAll(".button")
+    //select background (body) to change color
+    const bg = document.querySelector("body")
+
+    //use loop for all bottons
+    buttons.forEach(function(button){
+        console.log(button);
+        button.addEventListener('click',function(e){
+            console.log(e)
+            console.log(e.target)
+
+          if(e.target.id === "red"){
+            bg.style.backgroundColor = "red"
+          }
+          if(e.target.id === "yellow"){
+            bg.style.backgroundColor = "yellow"
+          }
+          if(e.target.id === "white"){
+            bg.style.backgroundColor = "white"
+          }
+          if(e.target.id === "blue"){
+            bg.style.backgroundColor = "blue"
+          }
+        })        
+        
+    })
+
+</script>
+
+</html>

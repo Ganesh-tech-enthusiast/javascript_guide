@@ -1,0 +1,62 @@
+<!-- here we will create simple digital clock showing realtime -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real time clock</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        /* Horizontal center */
+        align-items: center;
+        /* Vertical center */
+        height: 100vh;
+        /* Full screen height */
+        margin: 0;
+    }
+
+    #time {
+        color: white;
+        border: 2px solid red;
+        border-radius: 20px;
+        padding: 5px 45px;
+    }
+    #button{
+        padding: 5px 10px;
+        color: white;
+        background-color: grey;
+        border-radius: 6px;
+        margin-right: 20px;
+    }
+</style>
+
+<body>
+    <button id="button", onclick="starttimer()">Show real time</button>
+    <span id="time">indian standart time</span>
+</body>
+<script>
+     const clock = document.getElementById("time")
+
+    function starttimer(){
+        
+
+        setInterval(function(){
+              let date = new Date()
+              clock.innerHTML = date.toLocaleTimeString();
+        },1000)
+    }
+    
+
+</script>
+</html>

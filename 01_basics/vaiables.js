@@ -7,11 +7,19 @@ var studentadd = "Kolhar bk";
 //always use let instead of var 
 
 //print
-// studentID = 78; this is not allowed to constant variables
+// studentID = 78; //this is not allowed to constant variables
 studentname = "Dipak"
 
 //we can also print data in table format
-console.table([studentID,studentname,studentadd])
+console.table([studentID,studentname,studentadd])/*
+//it will output as 
+┌─────────┬─────────────┐
+│ (index) │ Values      │
+├─────────┼─────────────┤
+│ 0       │ 23          │
+│ 1       │ 'Dipak'     │
+│ 2       │ 'Kolhar bk' │
+└─────────┴─────────────┘ */
 
 //now we will learn variables scope 
 // 1.global scope of variable : let a = 45 ; this will behave as global variable
@@ -21,6 +29,6 @@ console.table([studentID,studentname,studentadd])
     var num2 =89;
     console.log(num , num2); //it is valid
 }
-console.log(num,num2); //variables cannot be accessed outside the block
+// console.log(num,num2); //variables cannot be accessed outside the block
 
 // 3.function scope :variables are accessible only inside the function scope

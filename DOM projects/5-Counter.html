@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #counter {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Counter App</h1>
+
+    <div id="counter">0</div>
+
+    <button onclick="increment()">+</button>
+    <button onclick="decrement()">-</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+
+        const currentvalue = document.getElementById("counter")
+
+        //now the div having id = counter is stored in currentvalue
+        //access the text inside currentvalue
+        const num = parseInt(currentvalue.innerHTML)
+        function increment() {
+            //get current value
+            const currentvalue = document.getElementById("counter")
+
+            //now the div having id = counter is stored in currentvalue
+            //access the text inside currentvalue
+            const num = parseInt(currentvalue.innerHTML)
+            currentvalue.innerHTML = num + 1
+        }
+        //same for decrement
+        function decrement() {
+            //get current value
+            const currentvalue = document.getElementById("counter")
+            const num = parseInt(currentvalue.innerHTML)
+
+            currentvalue.innerHTML = num - 1
+        }
+
+        //reset function
+        function reset() {
+            currentvalue.innerHTML = num
+        }
+    </script>
+
+</body>
+
+</html>

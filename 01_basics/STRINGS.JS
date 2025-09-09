@@ -66,6 +66,7 @@ console.log(text.lastIndexOf("e"));    // 18
 console.log(text.includes("awesome")); // true
 console.log(text.startsWith("Java"));  // true
 console.log(text.endsWith("!"));       // true
+console.log(text.endsWith("h"));       // false
 
 /*-----------------------------------------------------
  ✅ 6. Extracting Substrings
